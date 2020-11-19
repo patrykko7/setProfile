@@ -1,20 +1,30 @@
-jq
-tmux
-tilda
-python3
-python3-virtualenv
-git
-openvpn
-tcpdump
-net-tools
-dnsutils
-gnome-session-common
-gnome-settings-daemon
-gnome-settings-daemon-common
-gnome-shell
-gnome-shell-common
-gnome-shell-extension-appindicator
-gnome-shell-extension-dash-to-panel
-gnome-shell-extension-desktop-icons
-gnome-shell-extension-prefs
+#!/bin/bash
+apt-get update && apt install -y \
+	jq \
+	tmux \
+	tilda \
+	python3 \
+	python3-pip \
+	python3-virtualenv \
+	git \
+	openvpn \
+	tcpdump \
+	net-tools \
+	dnsutils \
+	gnome-session-common \
+	gngnome-settings-daemon \
+	gngnome-settings-daemon-common \
+	gngnome-shell \
+	gngnome-shell-common \
+	gngnome-shell-extension-appindicator \
+	gngnome-shell-extension-dash-to-panel \
+	gngnome-shell-extension-desktop-icons \
+	gngnome-shell-extension-prefs 
+
+cd /tmp && \
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+unzip awscliv2.zip && \
+# The default value is /usr/local/aws-cli.
+sudo ./aws/install
+
 

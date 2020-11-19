@@ -128,7 +128,9 @@ else
 fi
 unset color_prompt force_color_prompt
 
-
-
-
 source <(kubectl completion bash)
+
+export GOROOT=/usr/local/go
+export GOPATH=/home/patryk/repo/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
