@@ -27,4 +27,3 @@ unzip awscliv2.zip && \
 # The default value is /usr/local/aws-cli.
 sudo ./aws/install
 
-
