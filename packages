@@ -11,15 +11,19 @@ apt-get update && apt install -y \
 	tcpdump \
 	net-tools \
 	dnsutils \
+	curl \
 	gnome-session-common \
-	gngnome-settings-daemon \
-	gngnome-settings-daemon-common \
-	gngnome-shell \
-	gngnome-shell-common \
-	gngnome-shell-extension-appindicator \
-	gngnome-shell-extension-dash-to-panel \
-	gngnome-shell-extension-desktop-icons \
-	gngnome-shell-extension-prefs 
+	gnome-settings-daemon \
+	gnome-settings-daemon-common \
+	gnome-shell \
+	gnome-shell-common \
+	gnome-shell-extension-appindicator \
+	gnome-shell-extension-dash-to-panel \
+	gnome-shell-extension-desktop-icons \
+	gnome-shell-extension-prefs \
+	xclip
+
+cp -v kubectx kubens /usr/local/bin/
 
 cd /tmp && \
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
@@ -27,3 +31,7 @@ unzip awscliv2.zip && \
 # The default value is /usr/local/aws-cli.
 sudo ./aws/install
 
+# Download helm
+curl https://get.helm.sh/helm-v3.3.3-linux-amd64.tar.gz -o helm.tar.gz && \
+	tar zxvf helm.tar.gz && \
+	mv linux-amd64/helm /usr/bin/local/
