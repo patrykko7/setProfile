@@ -21,7 +21,7 @@ apt-get update && apt install -y \
 	gnome-shell-extension-dash-to-panel \
 	gnome-shell-extension-desktop-icons \
 	gnome-shell-extension-prefs \
-	xclip
+	xclip  
 
 cp -v kubectx kubens /usr/local/bin/
 
@@ -32,6 +32,11 @@ unzip awscliv2.zip && \
 sudo ./aws/install
 
 # Download helm
-curl https://get.helm.sh/helm-v3.3.3-linux-amd64.tar.gz -o helm.tar.gz && \
-	tar zxvf helm.tar.gz && \
-	mv linux-amd64/helm /usr/bin/local/
+curl -LO https://get.helm.sh/helm-v3.3.3-linux-amd64.tar.gz && \
+	tar zxvf helm-v3.3.3-linux-amd64.tar.gz && \
+	mv linux-amd64/helm /usr/local/bin/
+
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" && \
+	chmod +x ./kubectl && \
+	mv ./kubectl /usr/local/bin/
+
